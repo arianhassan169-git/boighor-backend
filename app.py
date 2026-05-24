@@ -3,9 +3,9 @@ from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from flask import Flask, request, jsonify, redirect, Response
 from datetime import datetime
-
+from flask_cors import CORS
 app = Flask(__name__)
-
+CORS(app)
 FIREBASE_URL    = os.environ.get("FIREBASE_URL", "").rstrip("/")
 FIREBASE_SECRET = os.environ.get("FIREBASE_SECRET", "")
 GMAIL_USER      = os.environ.get("GMAIL_USER", "")
